@@ -62,7 +62,7 @@ countdownElement.addEventListener('click', function() {
         if (secondi < 0) {
             clearInterval(interval); // Ferma il countdown
             countdownElement.textContent = "Stop"; // Mostra "Stop"
-            instructionsElement.style.display = "none"; // Nasconde le istruzioni
+            instructionsElement.textContent = "Inserisci la combinazione di numeri"; // Cambia il messaggio
             interval = null; // Reset per permettere un nuovo avvio
         }
     }, 1000);
