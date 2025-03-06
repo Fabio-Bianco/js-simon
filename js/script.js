@@ -42,3 +42,28 @@ generateBtn.addEventListener('click', function() {
 
 })
 
+const countdownElement = document.getElementById('countdown');
+const instructionsElement = document.getElementById('instructions');
+let interval = null; // Variabile per gestire il setInterval
+
+countdownElement.addEventListener('click', function() {
+    if (interval !== null) return; // Evita di avviare più countdown contemporaneamente
+
+    let secondi = 10; // Imposta il valore iniziale del countdown
+    countdownElement.textContent = secondi; // Mostra subito il numero iniziale
+
+    interval = setInterval(function() {
+        secondi--; // Decrementa il valore di secondi
+        
+        if (secondi >= 0) {
+            countdownElement.textContent = secondi; // Aggiorna il testo nel div
+        }
+
+        if (secondi < 0) {
+            clearInterval(interval); // Ferma il countdown
+            countdownElement.textContent = "Stop"; // Mostra "Stop"
+            instructionsElement.style.display = "none"; // Nasconde le istruzioni
+            interval = null; // Reset per permettere un nuovo avvio
+        }
+    }, 1000);
+});
