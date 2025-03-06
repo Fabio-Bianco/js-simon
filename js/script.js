@@ -9,7 +9,7 @@ function getRandInt(min, max) {
 for (let i = 0; i < 5; i++) {
     console.log(getRandInt(1, 50))
 };
-
+ 
 // seleziono l'elemento html con id generate-btn;
 const generateBtn = document.getElementById('generate-btn');
 
@@ -28,5 +28,17 @@ generateBtn.addEventListener('click', function() {
         }
     }
     console.log(numbers);
+        
+    // seleziono l'elemento html con id numbers-list;
+    const numbersList = document.getElementById('numbers-list');
+    numbersList.innerHTML = '';
+    // ciclo per stampare i numeri generati;
+    for (let i = 0; i < numbers.length; i++) {
+        const number = numbers[i];
+        const listItem = document.createElement('li'); // creo un elemento 'li' assente nell'html;
+        listItem.innerHTML = number;  // inserisco il numero nell'elemento 'li';
+        numbersList.appendChild(listItem); // inserisco l'elemento 'li' nell'elemento 'ul';
+    }
 
 })
+
