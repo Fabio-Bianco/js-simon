@@ -18,3 +18,9 @@ input {
  d-none {
 	display: none !important;
  }
+
+ message {
+    display: block !important;
+	position: relative;
+    z-index: 9999; /* Porta il messaggio in primo piano */
+}
